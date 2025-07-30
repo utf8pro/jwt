@@ -5,6 +5,8 @@ export type TJwt = {
   verify<T extends JWTPayload>(token: string): Promise<T>
 }
 
+export type TJwtPayload = JWTPayload
+
 export function createJwt(key: string): TJwt {
   const encoded = new TextEncoder().encode(key)
   return {
